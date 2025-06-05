@@ -1,0 +1,1 @@
+Метод select_rent_period_in_order вызван!

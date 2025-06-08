@@ -4,6 +4,7 @@ from conftest import *
 from data import order_data
 import pytest
 import allure
+
 class Test_Order:
     @allure.title("Проверка возможности оформления заказа через кнопку 'Заказать' в заголовке страницы")
     @pytest.mark.parametrize('order_info', order_data.order_info)

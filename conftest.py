@@ -11,10 +11,3 @@ def driver():
     driver = webdriver.Firefox()
     yield driver
     driver.quit()
-
-# @pytest.fixture()
-# def cookie_click(driver):
-#     wait = WebDriverWait(driver, 10)
-#     driver.get(URL_BASE)
-#     wait.until(EC.element_to_be_clickable(QUESTION.BTN_COOKIE)).click()
-

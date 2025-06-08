@@ -1,7 +1,5 @@
 from locators.order_page_locators import ORDER_LOCATORS
 from pages.base_page import Base_page
-from data.order_data import order_info
-from selenium.webdriver.common.by import By
 import allure
 
 class OrderPage(Base_page):

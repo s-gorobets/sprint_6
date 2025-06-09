@@ -17,6 +17,6 @@ class Test_Logo:
         scooter_logo.go_to_url()
         scooter_logo.click_order_button()
         scooter_logo.click_scooter_logo()
-        actual = scooter_logo.get_current_url()
+        actual = scooter_logo.current_url()
         exepted = URL_BASE
         assert actual == exepted

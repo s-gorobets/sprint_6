@@ -19,30 +19,25 @@ class MainPage(Base_page):
 
     @allure.step("Клик на лого Яндекса")
     def click_ya_logo(self):
-        self.wait.until(EC.element_to_be_clickable(LOGO.YA_LOGO)).click()
+        self.click_element(LOGO.YA_LOGO)
 
     @allure.step("Клик на лого Скутера")
     def click_scooter_logo(self):
-        self.wait.until(EC.element_to_be_clickable(LOGO.SCOOTER_LOGO)).click()
+        self.click_element(LOGO.SCOOTER_LOGO)
 
     @allure.step("Клик на кнопку заказа")
     def click_order_button(self):
         self.click_element(ORDER_LOCATORS.BUTTON_ORDER_HEADER)
 
-    @allure.step("Получение урла")
-    def get_current_url(self):
-        return self.driver.current_url
-
     @allure.step("Переход на соседнюю вкладку")
     def switch_to_new_window(self):
-        self.wait.until(EC.number_of_windows_to_be(2))
-        new_window = self.driver.window_handles[-1]
-        self.driver.switch_to.window(new_window)
+        self.wait_for_number_of_windows_to_be(2)
+        self.switch_to_last_opened_window()
 
     @allure.step("Проверка перехода на dzen.ru")
     def wait_for_dzen_redirect(self):
-        self.wait.until(EC.url_contains("dzen.ru"))
-        return "dzen.ru" in self.driver.current_url
+        self.wait_for_redirect("dzen.ru")
+        return "dzen.ru" in self.current_url()
 
 
 
